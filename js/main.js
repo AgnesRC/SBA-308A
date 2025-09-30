@@ -16,40 +16,40 @@ export async function getCharacters() {
     option.textContent = character.name;
     characterSelect.appendChild(option);
   });
+}
 
-  characterSelect.addEventListener("change", () => {
-    for (let i = 0; i < characterBio.length; i++) {
-      if (characterBio[i].name === characterSelect.value) {
-        console.log(characterBio[i]);
-        characterPicture.src = characterBio[i].imageUrl;
-        characterName.textContent = `Character Name: ${characterBio[i].name}`;
+export function getCharacterInfo() {
+  for (let i = 0; i < characterBio.length; i++) {
+    if (characterBio[i].name === characterSelect.value) {
+      console.log(characterBio[i]);
+      characterPicture.src = characterBio[i].imageUrl;
+      characterName.textContent = `Character Name: ${characterBio[i].name}`;
 
-        const appearances = [];
+      const appearances = [];
 
-        if (characterBio[i].films && characterBio[i].films.length > 0) {
-          appearances.push(`Films: ${characterBio[i].films.join(", ")}`);
-        }
-        if (characterBio[i].tvShows && characterBio[i].tvShows.length > 0) {
-          appearances.push(`Shows: ${characterBio[i].tvShows.join(", ")}`);
-        }
-        if (
-          characterBio[i].videoGames &&
-          characterBio[i].videoGames.length > 0
+      if (characterBio[i].films && characterBio[i].films.length > 0) {
+        appearances.push(`Films: ${characterBio[i].films.join(", ")}`);
+      }
+      if (characterBio[i].tvShows && characterBio[i].tvShows.length > 0) {
+        appearances.push(`Shows: ${characterBio[i].tvShows.join(", ")}`);
+      }
+      if (
+        characterBio[i].videoGames &&
+        characterBio[i].videoGames.length > 0
+      ) {
+        appearances.push(`Video Games: ${characterBio[i].videoGames.join(", ")}`);
+      } if (
+          characterBio[i].shortFilms &&
+          characterBio[i].shortFilms.length > 0
         ) {
-          appearances.push(`Video Games: ${characterBio[i].videoGames.join(", ")}`);
-        } if (
-            characterBio[i].shortFilms &&
-            characterBio[i].shortFilms.length > 0
-          ) {
-            appearances.push(`Short Films: ${characterBio[i].shortFilms.join(", ")}`);
-          }
-
-        if (appearances.length > 0) {
-            characterAppearances.textContent = `Appears in: ${appearances.join(", ")}`;
-        } else {
-            characterAppearances.textContent = "Appears in: None listed";
+          appearances.push(`Short Films: ${characterBio[i].shortFilms.join(", ")}`);
         }
+
+      if (appearances.length > 0) {
+          characterAppearances.textContent = `Appears in: ${appearances.join(", ")}`;
+      } else {
+          characterAppearances.textContent = "Appears in: None listed";
       }
     }
-  });
-}
+  }
+};

@@ -1,3 +1,6 @@
-import { getCharacters } from "./main.js";
+import { getCharacters, getCharacterInfo } from "./main.js";
 
 getCharacters();
+
+
+characterSelect.addEventListener("change", getCharacterInfo)
