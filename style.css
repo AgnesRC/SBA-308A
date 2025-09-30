@@ -1,0 +1,21 @@
+body {
+text-align: center;  
+}
+
+#characterselect {
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    font-size: large;
+} 
+
+#character-info {
+    border: 1px solid blue;
+}
+
+#character-image {
+    border-radius: 50%;
+
+
+}
