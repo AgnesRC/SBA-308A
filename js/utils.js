@@ -1,4 +1,4 @@
-import { getCharacters, getCharacterInfo } from "./main.js";
+import { characterSelect, getCharacters, getCharacterInfo } from "./main.js";
 
 getCharacters();
 
