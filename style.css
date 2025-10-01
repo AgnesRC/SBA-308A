@@ -15,7 +15,8 @@ text-align: center;
 }
 
 #character-image {
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
-
-
+    padding-top: 10px;
 }

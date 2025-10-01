@@ -1,5 +1,5 @@
-import { characterSelect, getCharacters, getCharacterInfo } from "./main.js";
-
+import { getCharacters, getCharacterInfo } from "./main.js";
+import { characterSelect } from "./elements.js"
 getCharacters();
 
 
