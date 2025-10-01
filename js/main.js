@@ -40,25 +40,28 @@ export async function getCharacterInfo() {
   }
 };
 
-// export async function createCharacter() {
-//   const response = gsdawait fetch('https://thronesapi.com/api/v2/Characters', {
-//   method: 'POST',
-//   headers: {
-//     'accept': '*/*',
-//     'Content-Type': 'application/json'
-//   },
-//   body: JSON.stringify({
-//     id: '53',
-//     firstName: 'Arya',
-//     lastName: 'Stark',
-//     fullName: 'Arya Stark',
-//     title: 'No One',
-//     family: 'Stark',
-//     image: 'arya_image_string',
-//     imageUrl: 'https://example.com/arya_stark.jpg'
-//   })
-// });
-// }
+// Function is not working because my browser is blocking the POST (CORS)
+async function createCharacter() {
+  const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+  const apiUrl = 'https://thronesapi.com/api/v2/Characters';
 
+   await fetch(proxyUrl + apiUrl, {
+      method: 'POST',
+      headers: {
+        'accept': '*/*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        id: 53,
+        firstName: 'Gendry',
+        lastName: 'Baratheon',
+        fullName: 'Gendry Baratheon',
+        title: 'Baratheon Bastard',
+        family: 'Baratheon',
+        image: 'gendry',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/en/9/9b/Gendry-Joe_Dempsie.jpg'
+      })
+    });
+}
 
-// createCharacter()
+createCharacter();
